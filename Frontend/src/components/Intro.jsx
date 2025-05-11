@@ -9,9 +9,16 @@ export default function Intro() {
   };
 
   return (
+    <div className="intro-container">
     <div>
-      <h1>This is the intro section</h1>
+      <p>Welcome to the Badmaash Beards product recommendation quiz. 
+        Discover the perfect products tailored to elevate your beard 
+        care routine. Whether you’re seeking refinement or boldness, 
+        we’ve got you covered. Answer a few simple questions, 
+        and let us guide you to the ideal products for your 
+        unique beard.</p>
       <button onClick={handleStart}>Start Quiz</button>
+      </div>
     </div>
   );
 }

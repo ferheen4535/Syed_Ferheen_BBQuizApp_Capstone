@@ -1,40 +1,38 @@
 import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
+import feather from 'feather-icons'; // Make sure feather-icons is installed
 
-const Navbar = () => (
-  <nav className="navbar">
-    <h4>Badmaash Beards</h4>
-    <div>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/UserForm">Quiz</NavLink>
-      <NavLink to="/ProductPage">Products</NavLink>
+const Navbar = () => {
+  useEffect(() => {
+    feather.replace(); // Load feather icons after render
+  }, []);
+
+  return (
+    <div className="navbar"> {/* Fixed className from "NavBar" to "navbar" */}
+      <nav className="menu" id="nav">
+        <span className="nav-item">
+          
+          <NavLink to="/" end>Badmaash Beards</NavLink>
+        </span>
+        <span className="nav-item">
+          
+          <NavLink to="/" end>Home</NavLink>
+        </span>
+        <span className="nav-item">
+          
+          <NavLink to="/UserForm">Quiz</NavLink>
+        </span>
+        <span className="nav-item">
+          
+          <NavLink to="/Products">Products</NavLink>
+        </span>
+        <span className="nav-item">
+          
+          <NavLink to="/Profile">Your Profile</NavLink>
+        </span>
+      </nav>
     </div>
-  </nav>
-);
+  );
+};
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react'
-
-
-// export default function Nav (props) {
-//   return (
-//     <div className="nav">
-     
-//         <div>CRYPTO PRICES</div>
-      
-//         <div>CURRENCIES</div>
-      
-//     </div>
-//   );
-// }

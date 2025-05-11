@@ -8,6 +8,7 @@ import usersRouter from './routes/quiz/usersRouter.js';
 import questionsRouter from './routes/quiz/questionsRouter.js';
 import resultsRouter from './routes/quiz/resultsRouter.js';
 
+
 const app = express();
 const port = process.env.PORT || 5055;
 
@@ -19,6 +20,7 @@ app.use(cors());
 app.use('/quiz/users', usersRouter);
 app.use('/quiz/questions', questionsRouter);
 app.use('/quiz/results', resultsRouter);
+
 
 // Routes
 app.get('/',(req, res)=>{

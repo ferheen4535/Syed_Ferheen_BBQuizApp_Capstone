@@ -1,18 +1,40 @@
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
-const API = import.meta.env.VITE_API_URL;
 
-export const createUser = async (userData) => {
-  const res = await axios.post(`${API}/users`, userData);
-  return res.data;
-};
-//----------API---------//
+const Results = () => {
+  const { id } = useParams();
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
-import React from 'react'
+  useEffect(() => {
+    const fetchResult = async () => {
+      try {
+        const res = await axios.get(`http://localhost:5055/results/${id}`);
+        setResult(res.data);
+      } catch (err) {
+        setError('Could not load result.');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-export default function Results() {
+    fetchResult();
+  }, [id]);
+
+  if (loading) return <p>Loading result...</p>;
+  if (error) return <p>{error}</p>;
+  if (!result) return <p>No result found.</p>;
+
   return (
-    <div>
-      <h1>This is the Results section</h1>
+    <div className="result-container">
+      <h2>{result.title}</h2>
+      <h4>Scent Match: {result.scentMatch}</h4>
+      <p>{result.description}</p>
     </div>
-  )
-}
+  );
+};
+
+export default Results;
