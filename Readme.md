@@ -1,2 +1,0 @@
-# Syed_Ferheen_QuizApp_Capstone
-# Syed_Ferheen_BBQuizApp_Capstone
