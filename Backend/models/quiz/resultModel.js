@@ -6,6 +6,7 @@ const resultSchema = new mongoose.Schema({
   description: String
 });
 
+
 const Result = mongoose.model('Result', resultSchema);
 
 export default Result;

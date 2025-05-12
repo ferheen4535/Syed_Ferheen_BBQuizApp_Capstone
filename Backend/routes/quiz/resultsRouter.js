@@ -6,19 +6,16 @@ const router = express.Router();
 // Seed database with results
 router.get('/seed', resultsControllers.seedResults);
 
-// Simple index route (optional)
-router.get('/', (req, res) => {
-  res.send('Here are your results');
-});
+// Route to handle calculated result from quiz answers
+router.post('/', resultsControllers.getResultByAnswer);
 
-// Create a new result
-router.post('/', resultsControllers.createResult);
-
-// Update an existing result by ID
+// Optional CRUD routes
+router.post('/create', resultsControllers.createResult);
 router.put('/:id', resultsControllers.updateResult);
-
-// Delete a result by ID
 router.delete('/:id', resultsControllers.deleteResult);
+
+
+
 
 
 

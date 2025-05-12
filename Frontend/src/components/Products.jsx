@@ -1,64 +1,78 @@
 import React from 'react';
 
 const products = [
-  {
-    name: 'Beard Butter 4-Pack Sampler',
-    price: '$25.00',
-    image: 'https://m.media-amazon.com/images/I/71CkD2g9x-L._AC_SL1500_.jpg',
-    link: 'https://www.amazon.com/Badmaash-Beards-Butter-4-Pack-Sampler/dp/B0DPXQQB44',
-  },
-  {
-    name: 'Beard Butter – Sandalwood (2oz)',
-    price: '$16.00',
-    image: 'https://m.media-amazon.com/images/I/61V9cJZqYxL._AC_SL1500_.jpg',
-    link: 'https://www.amazon.com/Badmaash-Beards-Butter-All-Natural-Conditioning/dp/B0DPLHNXHD',
-  },
 
   {
     name: 'Beard Butter – Sandalwood (2oz)',
     price: '$16.00',
-    image: 'https://m.media-amazon.com/images/I/61V9cJZqYxL._AC_SL1500_.jpg',
-    link: 'https://www.amazon.com/Badmaash-Beards-Butter-All-Natural-Conditioning/dp/B0DPLHNXHD',
+    image: '/images/BB_sandalwood.png',
+    alt: 'Beard Butter – Sandalwood (2oz)',
+    link: 'https://www.amazon.com/Badmaash-Beards-Butter-All-Natural-Conditioning/dp/B0DPN8SN8C?th=1',
+  },
+  {
+    name: 'Beard Butter – Smokin Cedar (2oz)',
+    price: '$16.00',
+    image: '/images/BB_SmokinCedar.png',
+    alt: 'Beard Butter – Smokin Cedar (2oz)',
+    link: 'https://www.amazon.com/Badmaash-Beards-Butter-All-Natural-Conditioning/dp/B0DPLHNXHD?th=1',
   },
 
-  {
-    name: 'Beard Butter – Sandalwood (2oz)',
+ {
+    name: 'Beard Butter – Icy Springs (2oz)',
     price: '$16.00',
-    image: 'https://m.media-amazon.com/images/I/61V9cJZqYxL._AC_SL1500_.jpg',
-    link: 'https://www.amazon.com/Badmaash-Beards-Butter-All-Natural-Conditioning/dp/B0DPLHNXHD',
+    image: '/images/BB_icySprings.png',
+    alt: 'Beard Butter – Icy Springs (2oz)',
+    link: 'https://www.amazon.com/Badmaash-Beards-Butter-All-Natural-Conditioning/dp/B0DPNHYBYK?th=1',
   },
 
-  {
-    name: 'Beard Butter – Sandalwood (2oz)',
+   {
+    name: 'Beard Butter – Masti Mint (2oz)',
     price: '$16.00',
-    image: 'https://m.media-amazon.com/images/I/61V9cJZqYxL._AC_SL1500_.jpg',
-    link: 'https://www.amazon.com/Badmaash-Beards-Butter-All-Natural-Conditioning/dp/B0DPLHNXHD',
+    image: '/images/BB_MastiMint.png',
+    alt: 'Beard Butter – Masti Mint (2oz)',
+    link: 'https://www.amazon.com/Badmaash-Beards-Butter-All-Natural-Conditioning/dp/B0DPNJDWBY?th=1',
   },
-  
+
+
+    
+
   {
     name: 'Beard Oil – Smokin\' Cedar (1oz)',
     price: '$16.00',
-    image: 'https://m.media-amazon.com/images/I/61vN4xM4Z6L._AC_SL1500_.jpg',
-    link: 'https://www.amazon.com/Badmaash-Beards-Beard-Oil-All-Natural/dp/B0DPLKB85Y',
+    image: '/images/BO_SmokinCedar.png',
+    alt: 'Beard Oil – Smokin\' Cedar (1oz)',
+    link: 'https://www.amazon.com/dp/B0DPLKB85Y?ref=emc_s_m_5_i_atc&th=1',
   },
   {
     name: 'Beard Oil – Sandalwood (1oz)',
     price: '$16.00',
-    image: 'https://m.media-amazon.com/images/I/61vN4xM4Z6L._AC_SL1500_.jpg',
-    link: 'https://www.amazon.com/Badmaash-Beards-Beard-Oil-All-Natural/dp/B0DPR8VJS3',
+    image: '/images/BO_sandalwood.png',
+    alt: 'Beard Oil – Sandalwood (1oz)',
+    link: 'https://www.amazon.com/dp/B0DPR8VJS3?ref=emc_s_m_5_i_atc&th=1',
   },
-{
-    name: 'Beard Oil – Sandalwood (1oz)',
+ {
+    name: 'Beard Oil – Masti Mint (1oz)',
     price: '$16.00',
-    image: 'https://m.media-amazon.com/images/I/61vN4xM4Z6L._AC_SL1500_.jpg',
-    link: 'https://www.amazon.com/Badmaash-Beards-Beard-Oil-All-Natural/dp/B0DPR8VJS3',
+    image: '/images/BO_MastiMint.png',
+    alt: 'Beard Oil – Masti Mint (1oz)',
+    link: 'https://www.amazon.com/dp/B0DPR7WN6J?ref=emc_s_m_5_i_atc&th=1',
   },
 
-  {
-    name: 'Beard Oil – Sandalwood (1oz)',
+   {
+    name: 'Beard Oil – Icy Springs (1oz)',
     price: '$16.00',
-    image: 'https://m.media-amazon.com/images/I/61vN4xM4Z6L._AC_SL1500_.jpg',
-    link: 'https://www.amazon.com/Badmaash-Beards-Beard-Oil-All-Natural/dp/B0DPR8VJS3',
+    image: '/images/BO_icySprings.png',
+    alt: 'Beard Oil – Icy Springs (1oz)',
+    link: 'https://www.amazon.com/dp/B0DPR6LLW9?ref=emc_s_m_5_i_atc&th=1',
+  },
+
+
+  {
+    name: 'Beard Butter 4-Pack Sampler',
+    price: '$22.00',
+    image: '/images/BB_sampler.png',
+    alt: 'Beard Butter 4-Pack Sampler',
+    link: 'https://www.amazon.com/dp/B0DPXQQB44/ref=sspa_dk_hqp_detail_aax_0?psc=1&sp_csd=d2lkZ2V0TmFtZT1zcF9ocXBfc2hhcmVk',
   },
 
 ];
@@ -70,7 +84,7 @@ export default function Products() {
       <div className="product-grid">
         {products.map((product, idx) => (
           <div className="product-card" key={idx}>
-            <img src={product.image} alt={product.name} />
+            <img src={product.image} alt={product.alt} className="product-image" />
             <h4>{product.name}</h4>
             <p>{product.price}</p>
             <a href={product.link} target="_blank" rel="noopener noreferrer">
