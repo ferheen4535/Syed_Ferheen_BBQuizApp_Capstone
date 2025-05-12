@@ -18,15 +18,16 @@ function App() {
     <div className="app-border">
         <Navbar />
         <Banner />
-        <Routes>
-          <Route path="/" element={<Intro />} />
-          <Route path="/userform" element={<UserForm />} />
-          <Route path="/quiz" element={<QuizSection />} />
-          <Route path="/results/:id" element={<Results />} />
-         <Route path="/banner" element={<Banner />} />
-         <Route path="/profile" element={<Profile />} />
-         <Route path="/products" element={<Products />} />
-        </Routes>
+     <Routes>
+  <Route path="/" element={<Intro />} />
+  <Route path="/userform" element={<UserForm />} />
+  <Route path="/quiz" element={<QuizSection />} />
+  <Route path="/results/:resultId" element={<Results />} />  
+  <Route path="/banner" element={<Banner />} />
+  <Route path="/profile" element={<Profile />} />
+  <Route path="/products" element={<Products />} />
+</Routes>
+
         <Footer />
         </div>
         </div>

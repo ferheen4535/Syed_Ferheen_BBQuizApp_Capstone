@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useEffect } from 'react';
-import feather from 'feather-icons'; // Make sure feather-icons is installed
+import feather from 'feather-icons'; // feather-icons installed
 
 const Navbar = () => {
   useEffect(() => {
@@ -26,10 +26,7 @@ const Navbar = () => {
           
           <NavLink to="/Products">Products</NavLink>
         </span>
-        <span className="nav-item">
-          
-          <NavLink to="/Profile">Your Profile</NavLink>
-        </span>
+        
       </nav>
     </div>
   );

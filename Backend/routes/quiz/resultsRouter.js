@@ -9,13 +9,16 @@ router.get('/seed', resultsControllers.seedResults);
 // Route to handle calculated result from quiz answers
 router.post('/', resultsControllers.getResultByAnswer);
 
-// Optional CRUD routes
+
 router.post('/create', resultsControllers.createResult);
 router.put('/:id', resultsControllers.updateResult);
 router.delete('/:id', resultsControllers.deleteResult);
 
 
 
+router.get('/seed',   resultsControllers.seedResults);
+router.get('/:id',    resultsControllers.getResultById);    
+router.post('/',      resultsControllers.getResultByAnswer);
 
 
 

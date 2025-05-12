@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
-  const [signInData, setSignInData] = useState({ username: '', email: '' });
+
   const [unsubscribeData, setUnsubscribeData] = useState({ username: '', email: '' });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
-  const handleSignInChange = (e) => {
-    setSignInData({ ...signInData, [e.target.name]: e.target.value });
-  };
 
   const handleUnsubscribeChange = (e) => {
     setUnsubscribeData({ ...unsubscribeData, [e.target.name]: e.target.value });
@@ -63,33 +59,6 @@ export default function Profile() {
   };
 
   return (
-    <div className="profile-page">
-      <div className="form-section">
-        <h2>Sign In</h2>
-        <form onSubmit={handleSignIn}>
-          <label>Username:</label>
-          <input
-            type="text"
-            name="username"
-            value={signInData.username}
-            onChange={handleSignInChange}
-            required
-          />
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={signInData.email}
-            onChange={handleSignInChange}
-            required
-          />
-          {error && <p style={{ color: 'red' }}>{error}</p>}
-          <button type="submit" disabled={loading}>
-            {loading ? 'Submitting...' : 'Sign in'}
-          </button>
-        </form>
-      </div>
-
       <div className="form-section">
         <h2>Unsubscribe</h2>
         <form onSubmit={handleUnsubscribe}>
@@ -112,6 +81,5 @@ export default function Profile() {
           <button type="submit">Unsubscribe</button>
         </form>
       </div>
-    </div>
   );
 }

@@ -92,3 +92,13 @@ export default function UserForm() {
     </div>
   );
 }
+
+
+//source
+
+//How To Make Sign In & Sign Up Form Using React JS | ReactJS Login & Registration Form
+//https://www.youtube.com/watch?v=8QgQKRcAUvM
+
+//https://stackoverflow.com/questions/71262407/login-page-with-either-username-or-email-using-react
+
+//https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/email

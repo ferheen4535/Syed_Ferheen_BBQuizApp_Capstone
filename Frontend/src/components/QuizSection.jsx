@@ -87,6 +87,8 @@ export default QuizSection;
 
 //sources:
 
+//Tutor: Jabeen Khan//
+
 //Get/fetch data from MongoDB and display them in Reactjs application
 //https://www.youtube.com/watch?v=Mfp94RjugWQ
 

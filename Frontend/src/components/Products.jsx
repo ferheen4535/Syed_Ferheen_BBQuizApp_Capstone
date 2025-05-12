@@ -25,7 +25,8 @@ const products = [
     link: 'https://www.amazon.com/Badmaash-Beards-Butter-All-Natural-Conditioning/dp/B0DPNHYBYK?th=1',
   },
 
-   {
+
+  {
     name: 'Beard Butter – Masti Mint (2oz)',
     price: '$16.00',
     image: '/images/BB_MastiMint.png',
@@ -33,8 +34,6 @@ const products = [
     link: 'https://www.amazon.com/Badmaash-Beards-Butter-All-Natural-Conditioning/dp/B0DPNJDWBY?th=1',
   },
 
-
-    
 
   {
     name: 'Beard Oil – Smokin\' Cedar (1oz)',
@@ -58,7 +57,7 @@ const products = [
     link: 'https://www.amazon.com/dp/B0DPR7WN6J?ref=emc_s_m_5_i_atc&th=1',
   },
 
-   {
+  {
     name: 'Beard Oil – Icy Springs (1oz)',
     price: '$16.00',
     image: '/images/BO_icySprings.png',
@@ -77,6 +76,9 @@ const products = [
 
 ];
 
+
+
+
 export default function Products() {
   return (
     <div className="products-page">
@@ -93,6 +95,30 @@ export default function Products() {
           </div>
         ))}
       </div>
+
+        <div>
+
+
+        </div>
+
+
     </div>
+    
   );
 }
+
+
+//sources:
+//Responsive React Cards | Mobile First Shopping Cards
+//https://www.youtube.com/watch?v=3_gakM-y7hE
+
+
+//Shopping Cart In React Js For Newbies
+//https://www.youtube.com/watch?v=NJ1inoC1L1k
+
+
+//How To Create An Advanced Shopping Cart With React and TypeScript
+//https://www.youtube.com/watch?v=lATafp15HWA
+
+
+//https://stackoverflow.com/questions/70293669/responsive-card-grid-in-react
