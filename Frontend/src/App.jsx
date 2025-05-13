@@ -24,7 +24,7 @@ function App() {
   <Route path="/quiz" element={<QuizSection />} />
   <Route path="/results/:resultId" element={<Results />} />  
   <Route path="/banner" element={<Banner />} />
-  <Route path="/profile" element={<Profile />} />
+  <Route path="/profile/" element={<Profile />} />
   <Route path="/products" element={<Products />} />
 </Routes>
 

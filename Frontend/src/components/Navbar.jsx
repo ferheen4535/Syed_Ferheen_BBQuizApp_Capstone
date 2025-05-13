@@ -8,7 +8,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="navbar"> {/* Fixed className from "NavBar" to "navbar" */}
+    <div className="navbar"> 
       <nav className="menu" id="nav">
         <span className="nav-item">
           
@@ -19,14 +19,17 @@ const Navbar = () => {
           <NavLink to="/" end>Home</NavLink>
         </span>
         <span className="nav-item">
-          
           <NavLink to="/UserForm">Quiz</NavLink>
         </span>
+
         <span className="nav-item">
-          
           <NavLink to="/Products">Products</NavLink>
         </span>
         
+  <span className="nav-item">
+          <NavLink to="/Profile">Profile</NavLink>
+        </span>
+
       </nav>
     </div>
   );

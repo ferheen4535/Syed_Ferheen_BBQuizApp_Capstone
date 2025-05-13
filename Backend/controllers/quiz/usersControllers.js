@@ -85,3 +85,24 @@ export async function deleteUser(req, res) {
         res.status(400).json({ error: error.message });
     }
 }
+
+//update user//
+export const updateUserByCreds = async (req, res) => {
+  const { username, email, newUsername } = req.body;
+
+  if (!username || !email || !newUsername) {
+    return res.status(400).json({ error: 'Missing fields' });
+  }
+
+  try {
+    const user = await User.findOneAndUpdate(
+      { username, email },             // find current user//
+      { username: newUsername },       // set new username//
+      { new: true, runValidators: true }
+    );
+    if (!user) return res.status(404).json({ error: 'User not found' });
+    res.json(user);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};

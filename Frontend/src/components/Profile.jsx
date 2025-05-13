@@ -1,85 +1,86 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
+
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5055';
 
 export default function Profile() {
 
-  const [unsubscribeData, setUnsubscribeData] = useState({ username: '', email: '' });
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const navigate = useNavigate();
+  const [updateData, setUpdateData] = useState({  //state variable for form update//
+    username: '',
+    email: '',
+    newUsername: ''
+  });
+  const [updating, setUpdating] = useState(false); // shows if its currently updated//
+  const [updateMsg, setUpdateMsg] = useState('');  //success or error message//
 
-  const handleUnsubscribeChange = (e) => {
-    setUnsubscribeData({ ...unsubscribeData, [e.target.name]: e.target.value });
-  };
 
-  const handleSignIn = async (e) => {
+  const [submitting, setSubmitting] = useState(false);
+  const [subMsg, setSubMsg] = useState('');
+
+
+  const onUpdateChange = e =>  //handlers for typing in the forms//
+    setUpdateData({ ...updateData, [e.target.name]: e.target.value });
+
+  
+  const handleUpdate = async e => {    //submitting the update//
     e.preventDefault();
-    setLoading(true);
-    setError(null);
+    setUpdating(true);
+    setUpdateMsg('');
 
     try {
-      const response = await fetch('http://localhost:5055/quiz/users', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(signInData),
-      });
-
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.message || 'Error signing in');
-
-      console.log('User signed in:', data);
-      navigate('');  ///I dont have a account page setup//
+      await axios.put(`${API}/quiz/users/update`, updateData);
+      setUpdateMsg('Username updated!');
     } catch (err) {
-      console.error('Sign-in error:', err);
-      setError(err.message);
+      console.error(err);
+      setUpdateMsg(
+        err.response?.data?.error ? err.response.data.error : 'Update failed.'
+      );
     } finally {
-      setLoading(false);
+      setUpdating(false);
     }
   };
 
-  const handleUnsubscribe = async (e) => {
-    e.preventDefault();
 
-    if (confirm('Are you sure you want to delete your profile? This cannot be undone.')) {
-      try {
-        const response = await fetch('http://localhost:5055/quiz/users/delete', {
-          method: 'DELETE',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(unsubscribeData),
-        });
-
-        if (!response.ok) throw new Error('Failed to unsubscribe');
-        alert('Your profile has been deleted.');
-        navigate('/');
-      } catch (err) {
-        console.error('Unsubscribe error:', err);
-        alert('Something went wrong. Please try again.');
-      }
-    }
-  };
-
+ 
+  //html formating /
   return (
-      <div className="form-section">
-        <h2>Unsubscribe</h2>
-        <form onSubmit={handleUnsubscribe}>
-          <label>Username:</label>
-          <input
-            type="text"
-            name="username"
-            value={unsubscribeData.username}
-            onChange={handleUnsubscribeChange}
-            required
-          />
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={unsubscribeData.email}
-            onChange={handleUnsubscribeChange}
-            required
-          />
-          <button type="submit">Unsubscribe</button>
-        </form>
-      </div>
+    <div className="profile-wrapper">
+    
+      <h2>Update Username</h2>
+      <form onSubmit={handleUpdate} className="profile-form">
+        <label>Current username</label>
+        <input
+          name="username"
+          value={updateData.username}
+          onChange={onUpdateChange}
+          required
+        />
+
+        <label>Email on file</label>
+        <input
+          name="email"
+          type="email"
+          value={updateData.email}
+          onChange={onUpdateChange}
+          required
+        />
+
+        <label>New username</label>
+        <input
+          name="newUsername"
+          value={updateData.newUsername}
+          onChange={onUpdateChange}
+          required
+        />
+
+        <button type="submit" disabled={updating}>
+          {updating ? 'Updating…' : 'Update'}
+        </button>
+      </form>
+      {updateMsg && <p>{updateMsg}</p>}
+
+      <hr />
+
+    </div>
   );
 }

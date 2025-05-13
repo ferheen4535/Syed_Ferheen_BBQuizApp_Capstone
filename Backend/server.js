@@ -22,6 +22,7 @@ app.use(cors());
 app.use('/quiz/users', usersRouter);
 app.use('/quiz/questions', questionsRouter);
 app.use('/quiz/results', resultsRouter);
+app.use('/quiz/users/:id', usersRouter );
 
 app.get('/', (req, res) => {
   res.send('Welcome to Badmaash Beards Quiz');

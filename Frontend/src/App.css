@@ -243,38 +243,21 @@ ul {
   padding: 0 5px; /* horizontal padding */
 }
 
-.profile-container {
-  background-color: #1e1e1e;
-  color: #f4f4f4;
-  padding: 2rem;
-  border-radius: 16px;
-  max-width: 500px;
-  margin: 5rem auto;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+.profile-wrapper {
+  max-width: 420px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #282525;
 }
 
-.profile-info p {
-  font-size: 1.1rem;
-  margin: 1rem 0;
+.profile-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
-
-.unsubscribe-button {
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #e16812;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.unsubscribe-button:hover {
-  background-color: #bf5006;
-}
-
 .products-page {
   padding: 2rem;
   text-align: center;
