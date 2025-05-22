@@ -1,0 +1,64 @@
+.quiz-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* Horizontal center */
+  justify-content: center; /* Vertical center */
+  font-size: 35px;
+  text-align: center;
+  border-color: #f06c00;
+  font-family: 'Arial', sans-serif;
+
+  
+}
+
+/*question display in quiz*/
+
+.options-list {
+  margin-top: 5px;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+/* Individual Option Styling */
+.options-list li {
+  width: 700px;
+  text-decoration: none;
+  list-style: none;
+  font-size: 20px;
+  color: #ffffff;
+  border: 1px solid #f06c00;
+  border-radius: 16px;
+  padding: 11px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover Effect */
+.options-list li:hover {
+  background-color: #000000;
+  transform: translateY(-2px);     
+  /* trigger */
+}
+
+/* Selected Option Styling */
+.options-list .selected {
+  background-color: #f06c00;
+  color: white;
+  font-weight: bold;
+  border-radius: 16px;
+  transform: scale(1.02);
+}
+
+/* new nav */
+* {
+	 margin: 0;
+  padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+  --primary: hsl(260, 100%, 80%);
+}
+

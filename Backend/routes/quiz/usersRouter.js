@@ -1,8 +1,11 @@
 import express from 'express';
 import * as usersControllers from '../../controllers/quiz/usersControllers.js';
 
+
 const router = express.Router();
 
+
+router.delete('/Unsubscribe', usersControllers.unsubscribeUser);
 
 router.get('/seed', usersControllers.seedUsers);
 

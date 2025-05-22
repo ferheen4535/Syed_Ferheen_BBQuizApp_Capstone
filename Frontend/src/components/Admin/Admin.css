@@ -1,0 +1,61 @@
+.admin-container {
+  width: 800px;
+  margin: 20px auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border: 1px solid #f06c00;
+  border-radius: 10px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.admin-container h1 {
+  margin: auto;
+  margin-bottom: 60px;
+  font-size: 28px;
+  margin: auto;
+}
+
+.admin-container p {
+  color: #ffffff;
+  margin-bottom: 20px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.admin-actions h3 {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin: auto;
+}
+
+.admin-actions ul {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+}
+
+.admin-actions li {
+  background-color: black;
+  border: 1px solid #f06c00;
+  border-radius: 10px;
+  padding: 8px;
+  width: 300px;
+  margin: 10px 0;
+  margin: auto;
+  margin-bottom: 30px;
+   margin-top: 30px;
+   border-radius: 4px;
+}
+
+.admin-actions a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.admin-actions a:hover {
+  color: #f06c00;
+  
+}

@@ -106,3 +106,26 @@ export const updateUserByCreds = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
+
+// Delete user by username & email -> find _id first, then delete by _id
+export async function unsubscribeUser(req, res) {
+  const { username, email } = req.body;
+
+  if (!username || !email) {
+    return res.status(400).json({ error: 'Username and email are required' });
+  }
+
+  try {
+    const user = await User.findOne({ username, email });
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    await User.findByIdAndDelete(user._id);
+
+    res.json({ message: `User '${username}' unsubscribed successfully.` });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server error' });
+  }
+}

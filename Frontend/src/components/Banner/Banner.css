@@ -1,0 +1,7 @@
+.banner-image {
+  width: 1000px;
+  border: 1px solid #525252;
+  display: block;
+  margin: 0 auto; /* center it horizontally */
+  
+}
